@@ -1,0 +1,25 @@
+<p class="notice"><%= notice %></p>
+<h1>Blogs</h1>
+<%= render 'shared/nav' %>
+<div>
+	<% @blogs.each do |blog| %>
+	<div class="card">
+		<div>
+			<%= blog.title %>
+		</div>
+		<div>
+			<%= blog.published %>
+		</div>
+		<div>
+			<%= blog.body %>
+		</div>
+		<div>
+			<%= link_to 'Show', blog %>
+			<%= link_to 'Edit', edit_blog_path(blog) %>
+			<%= link_to 'Show', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'New Blog', new_blog_path %>
