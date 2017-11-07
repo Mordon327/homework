@@ -14,7 +14,7 @@
     <p class="alert"><%= alert %></p>
   	<%= render 'shared/nav' %>
     <%= login_helper 'yup' %>
-    <%= User.name %>
+    <%= current_user.name %>
     <%= yield %>
   </body>
 </html>
